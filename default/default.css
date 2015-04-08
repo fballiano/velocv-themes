@@ -1,0 +1,61 @@
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css");
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+body {
+	display: none;
+}
+
+nav {
+	margin-top: 30px;
+}
+
+#courses ul {
+	padding-left: 45px;
+}
+
+#skills ul {
+	font-size: 120%;
+	margin-bottom: 0;
+}
+
+#skills ul li {
+	font-weight: normal;
+}
+
+#picture {
+	margin-bottom: 20px;
+}
+
+.removebottommargin {
+	margin-bottom: 0;
+}
+
+.panel-heading h3 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#industry {
+	display:none
+}
+/*
+.dates {
+	clear: both;
+}
+
+.dates div {
+	float: left;
+}
+*/
+@media (min-width: 768px) {
+	#picture {
+		width: 212.5px;
+	}
+}
+
+@media (min-width: 1200px) {
+	#picture {
+		width: 262.5px;
+	}
+}
