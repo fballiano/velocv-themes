@@ -1,1 +1,1 @@
-# velocv-themes
+# VeloCV's theme repository
