@@ -7,9 +7,9 @@
 
 ## Overview of the process of creating a theme
 
-* Fork this repository
-* create a new folder, it will be the name of your theme
-* create (inside the folder) a js file with the name name of your folder and .js extension
-* create (inside the folder) a css file with the name name of your folder and .css extension
-* tweak the js/css files as you wish (keep reading for guidelines)
-* create a pull request for us to approve the theme
+1. Fork this repository
+2. create a new folder, it will be the name of your theme
+3. create (inside the folder) a js file with the name name of your folder and .js extension
+4. create (inside the folder) a css file with the name name of your folder and .css extension
+5. tweak the js/css files as you wish (keep reading for guidelines)
+6. create a pull request for us to approve the theme
