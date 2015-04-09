@@ -38,7 +38,7 @@ For example, if you want to load font-awesome (which is just a single css file) 
 
 Be sure to check how the [default theme](https://github.com/fballiano/velocv-themes/tree/master/default) is done, it should be self explanatory, quite easy to follow and it should have all the info you need to process every section of the theme.
 
-# How do I set my credits in the theme I'm creating?
+## How do I set my credits in the theme I'm creating?
 
 If you loaded jQuery then you can simply do:
 ```javascript
