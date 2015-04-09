@@ -2,7 +2,7 @@
 @import url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css");
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 
-body {
+body, #industry {
 	display: none;
 }
 
@@ -34,10 +34,6 @@ nav {
 .panel-heading h3 {
 	margin-top: 5px;
 	margin-bottom: 5px;
-}
-
-#industry {
-	display:none
 }
 
 @media (min-width: 768px) {
