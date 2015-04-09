@@ -39,15 +39,7 @@ nav {
 #industry {
 	display:none
 }
-/*
-.dates {
-	clear: both;
-}
 
-.dates div {
-	float: left;
-}
-*/
 @media (min-width: 768px) {
 	#picture {
 		width: 212.5px;
