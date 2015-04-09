@@ -37,3 +37,11 @@ For example, if you want to load font-awesome (which is just a single css file) 
 ## Where should I start?
 
 Be sure to check how the [default theme](https://github.com/fballiano/velocv-themes/tree/master/default) is done, it should be self explanatory, quite easy to follow and it should have all the info you need to process every section of the theme.
+
+# How do I set my credits in the theme I'm creating?
+
+```css
+$("#designer")
+  .attr("href", "http://mywebsite.com")
+  .text("My Name");
+```
