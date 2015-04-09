@@ -54,8 +54,9 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 			}
 		});
 		
-		$("#designer").attr("href", "http://fabrizioballiano.com");
-		$("#designer").text("Fabrizio Balliano");
+		$("#designer")
+			.attr("href", "http://fabrizioballiano.com")
+			.text("Fabrizio Balliano");
 		
 		if ($("nav#profileLanguages").length) {
 			var selected_language = $("nav#profileLanguages li.active").text();
