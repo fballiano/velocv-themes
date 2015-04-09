@@ -40,7 +40,7 @@ Be sure to check how the [default theme](https://github.com/fballiano/velocv-the
 
 # How do I set my credits in the theme I'm creating?
 
-```css
+```javascript
 $("#designer")
   .attr("href", "http://mywebsite.com")
   .text("My Name");
