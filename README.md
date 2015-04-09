@@ -2,8 +2,8 @@
 
 ## Why should I create a VeloCV theme?
 
-* Credits: you're allowed to put your credits in the footer of the theme, every user that will select your theme will show your name/link to all his contacts
-* Fee (not available yet): if the VeloCV user buys the premium service (which is also not available yet) credits are removed but we're working with tax consultants to understand if we can pay a fee to the designer (some money for every day or usage of your themes and for every user)
+* **Credits**: you're allowed to put your credits in the footer of the theme, every user that will select your theme will show your name/link to all his contacts
+* **Money** (not available yet): if the VeloCV user buys the premium service (which is also not available yet) credits are removed but we're working with tax consultants to understand if we can pay a fee to the designer (some money for every day or usage of your themes and for every user)
 
 ## Overview of the process of creating a theme
 
