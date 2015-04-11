@@ -34,14 +34,14 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         if (level == "proficiency-elementary") level = 20;
         $(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><input class="knob" readonly="readonly" data-width="150" data-fgColor="#2c3e50" data-skin="tron" data-thickness=".1" value="' + level + '"><h3>' + $(this).children("h4").text() + '</h3><p>' + $(this).children("div.proficiency").text() + '</p></div>');
     });
-    $("section#languages ul").replaceWith('<div class="row text-center">' + $("section#languages ul").html() + '</div>');
+    $("section#languages ul").replaceWith('<div class="row text-center">' + ($("section#languages ul").html()?$("section#languages ul").html():'')  + '</div>');
     
     $("section#skills li").each(function () {
         $(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><h3>' + $(this).text() + '</h3></div>');
     });
-    $("section#skills ul").replaceWith('<div class="row text-center">' +    $("section#skills ul").html() + '</div>');
+    $("section#skills ul").replaceWith('<div class="row text-center">' +  ($("section#skills ul").html()?$("section#skills ul").html():'') + '</div>');
     $("#picture").addClass("about-photo");
-    $("nav#profileSections").after('<section id="about"><div class="container"><div class="text-center animateup animated fadeInUp"><div class="inline-icons-text section-heading"><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div><div class="inline-icon heading-width"><span class="heading-text">' + $("h1").text() + '</span></div><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div></div></div><p class="text-center">' + $("h2").html() + '</p><div class="gap-30"></div><div class="row equalheight"><div class="col-md-4 left-services text-right"></div><div class="col-md-4">' + $("#picture")[0].outerHTML + '</div><div class="col-md-4 right-services"></div></div><div class="gap-30"></div><p>' + $("#summary").html() + '</p></div></section>');	
+    $("nav#profileSections").after('<section id="about"><div class="container"><div class="text-center animateup animated fadeInUp"><div class="inline-icons-text section-heading"><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div><div class="inline-icon heading-width"><span class="heading-text">' + $("h1").text() + '</span></div><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div></div></div><p class="text-center">' + $("h2").text() + '</p><div class="gap-30"></div><div class="row equalheight"><div class="col-md-4 left-services text-right"></div><div class="col-md-4">' + $("#picture")[0].outerHTML + '</div><div class="col-md-4 right-services"></div></div><div class="gap-30"></div><p>' + ($("#summary").html()?$("#summary").html():'') + '</p></div></section>');	
 	
     $("h1,h2,#summary,img:last,#industry").remove();
     $("#phoneNumbers ul, #twitterAccounts ul, #memberUrlResources ul, #imAccounts ul").addClass("list-unstyled removebottommargin");
