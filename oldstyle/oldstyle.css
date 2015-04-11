@@ -1,0 +1,64 @@
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css");
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+body {
+	display: none;
+}
+
+#skills ul li {
+	font-weight: normal;
+}
+
+h4 {
+	margin-bottom: 0;
+}
+
+dd .summary {
+	margin-top: 10px;
+}
+
+dd li {
+	margin-bottom: 40px;
+}
+
+dd li:last-child, #courses dd li, #skills dd li {
+	margin-bottom: 0;
+}
+
+.recommender {
+	font-style: italic;
+}
+
+#about {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+}
+
+#about ul {
+	margin-bottom: 0;
+}
+
+#picture {
+	float: right;
+	max-width: 300px;
+	margin-left: 20px;
+}
+
+#summary {
+	margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+	.dl-horizontal dd {
+		border-left: 1px solid #333;
+		padding-left: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	dl {
+		border-top: 1px solid #333;
+	}
+}
