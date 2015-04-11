@@ -42,6 +42,16 @@ You can/should completely change the dom structure of the page to fit the needs 
 
 ## How can I quickly write and test my theme?
 
+### Method n.1
+
+Once you forked and cloned this repository you'll find a "sample-profile.html" file in the root directory.
+Open it with your favorite editor and search for the two occurrences of the string "/default/default.", replace the default with your theme name and you can start checking this file in your browser(s).
+Change your js/css, reload the browser, same old story ;)
+
+**Note**: we suggest you to use a real web server (like apache, any other would fit anyway) because sometimes if you just point your browser to "c:\where-you-cloned-velocv-themes\sample-profile.html" the browser itself could have problems/limitation loading external resources. If instead you're using a web server and point your browser to "http://localhost/velocv-themes/sample-profile.html" everything will work just fine and it would be a much better test.
+
+### Method n.2
+
 We've set up a playground with all the things you need to create a theme quickly, it's available at this link:
 http://jsfiddle.net/fballiano/nun64s28/
 
