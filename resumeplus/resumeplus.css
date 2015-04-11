@@ -1,0 +1,39 @@
+@import url("//themifycloud.com/demos/templates/resumeplus/css/bootstrap.css");
+@import url("//themifycloud.com/demos/templates/resumeplus/css/animate.css");
+@import url("//themifycloud.com/demos/templates/resumeplus/css/style.css");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+@import url("//fonts.googleapis.com/css?family=Titillium+Web:300");
+
+section {
+    padding-top: 0;
+}
+
+footer a, footer a:hover {
+	color: white;
+}
+
+#positions .endDate {
+	margin-top: 15px;
+}
+
+.equalheight {
+	display: table;
+}
+
+.equalheight .col-md-4 {
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#profileLanguagesSelector, #profileLanguagesSelector * {
+	background: #262a2d;
+	color: white;
+	border: none;
+}
+
+body {
+	display: none;
+}
