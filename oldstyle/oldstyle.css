@@ -26,6 +26,12 @@ dd li:last-child, #courses dd li, #skills dd li {
 	margin-bottom: 0;
 }
 
+
+.dl-horizontal dt {
+	white-space: normal;
+	word-break: break-all;
+}
+
 .recommender {
 	font-style: italic;
 }
@@ -38,6 +44,10 @@ dd li:last-child, #courses dd li, #skills dd li {
 
 #about ul {
 	margin-bottom: 0;
+}
+
+#about div {
+	white-space: nowrap;
 }
 
 #picture {
@@ -60,5 +70,11 @@ dd li:last-child, #courses dd li, #skills dd li {
 @media (max-width: 768px) {
 	dl {
 		border-top: 1px solid #333;
+	}
+	
+	#about {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
 	}
 }
