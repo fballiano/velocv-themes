@@ -1,0 +1,36 @@
+@import url(css/default.css);
+@import url(css/layout.css);
+@import url(media-queries.css);
+@import url(magnific-popup.css);
+
+body {
+	display: none;
+}
+
+#about .profile-pic {
+	width: 100%;
+	height: auto;
+}
+
+.velocv-skills li {
+	float: left;
+	margin-right: 30px;
+}
+
+.bars li em {
+  font: 25px/30px 'opensans-bold', sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: normal;
+  position: relative;
+  top: -36px;
+}
+
+.bar-expand {
+	padding-left: 10px;
+	overflow: hidden;
+}
+
+#nav-wrap {
+	position: absolute;
+}
