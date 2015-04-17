@@ -34,3 +34,7 @@ body {
 #nav-wrap {
 	position: absolute;
 }
+
+#resume .three.columns h1 {
+	line-height: 40px;
+}

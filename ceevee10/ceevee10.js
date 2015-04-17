@@ -48,8 +48,13 @@ require(["//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js","//
 		$(".velocv-languages").prepend("<p></p>");
 		$(".velocv-languages ul").addClass("skills").wrap('<div class="bars"></div>');
 		$(".velocv-languages li").each(function () {
-			$(this).children(".proficiency").replaceWith('<span class="bar-expand">' + $(this).children(".proficiency").text() + '</span>');
-			$(this).children(".bar-expand").after('<em>' + $(this).children("h3").text() + '</em>');
+			if ($(this).children(".proficiency").length) {
+				$(this).children(".proficiency").replaceWith('<span class="bar-expand">' + $(this).children(".proficiency").text() + '</span>');
+				$(this).children(".bar-expand").after('<em>' + $(this).children("h3").text() + '</em>');
+			} else {
+				$(this).css("background", "none");
+				$(this).prepend('<em>' + $(this).children("h3").text() + '</em>');
+			}
 		});
 		$(".velocv-languages li h3, .velocv-languages li p.info").remove();
 		$(".velocv-languages li.proficiency-elementary .bar-expand").css("width", "20%");
