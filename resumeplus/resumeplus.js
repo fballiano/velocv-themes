@@ -1,9 +1,6 @@
 require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
     require(["//themifycloud.com/demos/templates/resumeplus/js/bootstrap.min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.isotope.min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.easing.js", "//themifycloud.com/demos/templates/resumeplus/js/classie.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.appear.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.flexslider-min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.knob.js"], function () {
     
-        
-        
-    
     $("body")
         .attr("id", "page-top")
         .addClass("index")
@@ -41,7 +38,8 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
     });
     $("section#skills ul").replaceWith('<div class="row text-center">' +  ($("section#skills ul").html()?$("section#skills ul").html():'') + '</div>');
     $("#picture").addClass("about-photo");
-    $("nav#profileSections").after('<section id="about"><div class="container"><div class="text-center animateup animated fadeInUp"><div class="inline-icons-text section-heading"><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div><div class="inline-icon heading-width"><span class="heading-text">' + $("h1").text() + '</span></div><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div></div></div><p class="text-center">' + $("h2").text() + '</p><div class="gap-30"></div><div class="row equalheight"><div class="col-md-4 left-services text-right"></div><div class="col-md-4">' + $("#picture")[0].outerHTML + '</div><div class="col-md-4 right-services"></div></div><div class="gap-30"></div><p>' + ($("#summary").html()?$("#summary").html():'') + '</p></div></section>');	
+    $("nav#profileSections").after('<section id="about"><div class="container"><div class="text-center animateup animated fadeInUp"><div class="inline-icons-text section-heading"><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div><div class="inline-icon heading-width"><span class="heading-text">' + $("h1").text() + '</span></div><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div></div></div><p class="text-center">' + $("h2").text() + '</p><div class="gap-30"></div><div class="row equalheight"><div class="col-md-4 left-services text-right"></div><div class="col-md-4">' + $("#picture")[0].outerHTML + '</div><div class="col-md-4 right-services"></div></div><div class="gap-30"></div><p class="velocv-summary">' + ($("#summary").html()?$("#summary").html():'') + '</p></div></section>');	
+	if ($(".velocv-summary").height()<40) $(".velocv-summary").addClass("text-center");
 	
     $("h1,h2,#summary,img:last,#industry").remove();
     $("#phoneNumbers ul, #twitterAccounts ul, #memberUrlResources ul, #imAccounts ul").addClass("list-unstyled removebottommargin");
@@ -85,6 +83,8 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 	$("section#recommendationsReceived h2").after('<div class="gap-50"></div>');
 	$("section#recommendationsReceived .item:first").addClass("active");
 	$("section#recommendationsReceived").next("section").css("padding-top", "100px");
+	
+	if ($("#interests div:last").height()<40) $("#interests div:last").addClass("text-center");
 	
     $("#designer")
         .attr("href", "http://themifycloud.com/downloads/resume-plus-responsive-one-page-template/")
