@@ -35,13 +35,13 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		$("#mainAddress").prepend("<i class='fa fa-globe fa-2'></i>&nbsp;");
 		
 		$("section>div, section>ul").addClass("panel-body");
-		$("section").addClass("panel panel-default").prepend("<div class='panel-heading'></div>");
+		$("section").addClass("panel panel-primary").prepend("<div class='panel-heading'></div>");
 		$("section").each(function () {
 			$(this).find(".panel-heading").append($(this).find("h3"));
 		});
 		
 		$("#summary").addClass("panel panel-info").wrapInner("<div class='panel-body bg-info'></div>");
-		$("section:first").before("<div class='panel panel-default' id='allcontacts'><div class='panel-body'></div></div>");
+		$("section:first").before("<div class='panel panel-primary' id='allcontacts'><div class='panel-body'></div></div>");
 		$("#allcontacts .panel-body").append("<div id='container'><div class='row'><div class='col-sm-6 leftcol'></div><div class='col-sm-6 rightcol'></div></div></div>")
 		$("#allcontacts .leftcol").append($("#emailAddress,#location,#mainAddress,#phoneNumbers,#imAccounts"));
 		$("#allcontacts .rightcol").append($("#memberUrlResources,#twitterAccounts,#publicProfileUrlParent"));
