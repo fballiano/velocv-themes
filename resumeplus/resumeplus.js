@@ -29,9 +29,14 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         if (level == "proficiency-professional_working") level = 60;
         if (level == "proficiency-limited_working") level = 40;
         if (level == "proficiency-elementary") level = 20;
-        $(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><input class="knob" readonly="readonly" data-width="150" data-fgColor="#2c3e50" data-skin="tron" data-thickness=".1" value="' + level + '"><h3>' + $(this).children("h4").text() + '</h3><p>' + $(this).children("div.proficiency").text() + '</p></div>');
+		if (level == "proficiency-") {
+			$(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><div class="placeholder" style="height:205px"></div><h3>' + $(this).children("h4").text() + '</h3><p></p></div>');
+		} else {
+			$(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><input class="knob" readonly="readonly" data-width="150" data-fgColor="#2c3e50" data-skin="tron" data-thickness=".1" value="' + level + '"><h3>' + $(this).children("h4").text() + '</h3><p>' + $(this).children("div.proficiency").text() + '</p></div>');
+		}
     });
     $("section#languages ul").replaceWith('<div class="row text-center">' + ($("section#languages ul").html()?$("section#languages ul").html():'')  + '</div>');
+	if ($("section#languages .knob").length == 0) $("section#languages .placeholder").remove();
     
     $("section#skills li").each(function () {
         $(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><h3>' + $(this).text() + '</h3></div>');
