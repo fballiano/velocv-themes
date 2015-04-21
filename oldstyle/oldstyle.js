@@ -39,6 +39,10 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		if ($("#picture").length && $("#summary").length) {
 			$("#picture").addClass("img-thumbnail img-responsive hidden-xs");
 			$("#summary").prepend($("#picture"));
+		} else {
+			$("#picture").addClass("img-thumbnail hidden-xs pull-right");
+			$("#about").addClass("twocols").wrap('<div class="row" id="aboutwrapper"></div>');
+			$("#aboutwrapper").prepend($("#picture"));
 		}
 		
 		$("footer").addClass("text-center");
