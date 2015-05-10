@@ -5,7 +5,10 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		$("nav#profileSections").remove();
 		$("#about").addClass("panel-body");
 		
-		$("#skills ul").addClass("list-inline");
+		$("#skills ul").addClass("list-unstyled");
+		$("#skills li").addClass("pull-left");
+		$("#skills li:not(:last)").append(",&nbsp;");
+		$("#skills li:last").append(".");
 		$("#phoneNumbers ul, #twitterAccounts ul, #memberUrlResources ul, #imAccounts ul").addClass("list-unstyled removebottommargin");
 		$("#phoneNumbers li").prepend("<i class='fa fa-phone fa-2'></i>&nbsp;");
 		$("#twitterAccounts li").prepend("<i class='fa fa-twitter fa-2'></i>&nbsp;");

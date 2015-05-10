@@ -6,7 +6,10 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		$("body>.container>.row>.col-md-3").append($("nav"));
 		$("nav#profileSections").prepend($("#picture"));
 		$("nav#profileSections ul").addClass("nav nav-pills nav-stacked");
-		$("#skills ul li").addClass("label label-default");
+		$("#skills ul").addClass("list-unstyled");
+		$("#skills li").addClass("pull-left");
+		$("#skills li:not(:last)").append(",&nbsp;");
+		$("#skills li:last").append(".");
 		$("#positions ul, #honorsAwards ul, #educations ul, #publications ul, #certifications ul, #recommendationsReceived ul").addClass("list-group");
 		$("#positions ul li, #honorsAwards ul li, #educations ul li, #publications ul li, #certifications ul li, #recommendationsReceived ul li").addClass("list-group-item");
 		$(".recommender").addClass("text-right").css("font-style", "italic");

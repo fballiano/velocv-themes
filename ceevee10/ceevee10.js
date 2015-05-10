@@ -76,7 +76,8 @@ require(["//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js","//
 		$("section#recommendationsReceived").attr("id", "testimonials");
 		
 		$(".row:not(.velocv-skills) .main-col li, .velocv-interests .main-col").append("<p></p>");
-		
+		$(".velocv-skills li:not(:last)").append(",&nbsp;");
+		$(".velocv-skills li:last").append(".");
 		
 		$("footer").wrapInner('<div class="row"><div class="twelve columns"></div></div>');
 		$("footer .row .twelve").prepend($("header ul.social").clone());
