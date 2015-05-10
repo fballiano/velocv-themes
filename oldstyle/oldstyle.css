@@ -29,7 +29,7 @@ dd li:last-child, #courses dd li, #skills dd li {
 
 .dl-horizontal dt {
 	white-space: normal;
-	word-break: break-all;
+	word-break: break-word;
 }
 
 .recommender {
