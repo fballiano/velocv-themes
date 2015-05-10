@@ -22,6 +22,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js","//
 			.append($("#memberUrlResources li"));
 		$("#industry,#imAccounts,#twitterAccounts,#memberUrlResources,#publicProfileUrl").remove();
 		
+		$("#about script").remove();
 		$("#about").addClass("velocv-about");
 		$("header").after('<section id="about"><div class="row"><div class="three columns"><img class="profile-pic" src="' + $("#picture").attr("src") + '" alt="" /></div><div class="nine columns main-col"><p>' + ($("#summary").html() ? $("#summary").html() : "") + '</p><div class="row"><div class="columns contact-details"><p class="address">' + ($("#about").html()?$("#about").html():'') + '</p></div></div></div></div></section>');
 		$("#picture,#summary,.velocv-about").remove();
