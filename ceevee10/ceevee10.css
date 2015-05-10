@@ -1,7 +1,7 @@
 @import url(css/default.css);
 @import url(css/layout.css);
-@import url(media-queries.css);
-@import url(magnific-popup.css);
+@import url(css/media-queries.css);
+@import url(css/magnific-popup.css);
 
 body {
 	display: none;
