@@ -38,6 +38,22 @@ nav {
 	margin-top: 40px;
 }
 
+.progress {
+	height: 27px;
+}
+
+ul.list-group li div {
+	font-size: 15px;
+}
+
+footer {
+	text-align: center;
+}
+
+footer {
+	text-align: center;
+}
+
 @media (min-width: 768px) {
 	#picture {
 		width: 212.5px;
