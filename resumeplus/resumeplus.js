@@ -44,7 +44,7 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
     $("section#skills ul").replaceWith('<div class="row text-center">' +  ($("section#skills ul").html()?$("section#skills ul").html():'') + '</div>');
     $("#picture").addClass("about-photo");
     $("nav#profileSections").after('<section id="about"><div class="container"><div class="text-center animateup animated fadeInUp"><div class="inline-icons-text section-heading"><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div><div class="inline-icon heading-width"><span class="heading-text">' + $("h1").text() + '</span></div><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div></div></div><p class="text-center">' + $("h2").text() + '</p><div class="gap-30"></div><div class="row equalheight"><div class="col-md-4 left-services text-right"></div><div class="col-md-4">' + $("#picture")[0].outerHTML + '</div><div class="col-md-4 right-services"></div></div><div class="gap-30"></div><p class="velocv-summary">' + ($("#summary").html()?$("#summary").html():'') + '</p></div></section>');	
-	if ($(".velocv-summary").height()<40) $(".velocv-summary").addClass("text-center");
+	if ($(".velocv-summary").text().length<300) $(".velocv-summary").addClass("text-center");
 	
     $("h1,h2,#summary,img:last,#industry").remove();
     $("#phoneNumbers ul, #twitterAccounts ul, #memberUrlResources ul, #imAccounts ul").addClass("list-unstyled removebottommargin");
