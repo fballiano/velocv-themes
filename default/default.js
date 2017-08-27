@@ -14,7 +14,7 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		$("#positions ul li, #honorsAwards ul li, #educations ul li, #publications ul li, #certifications ul li, #recommendationsReceived ul li").addClass("list-group-item");
 		$(".recommender").addClass("text-right").css("font-style", "italic");
 		$("#picture").addClass("img-circle").wrap("<a href='#'></a>");
-		
+
 		$("#languages ul").addClass("list-unstyled");
 		$("#languages .proficiency").addClass("progress-bar").attr("aria-valuemin", "0").attr("aria-valuemax", "100");
 		$("#languages .proficiency").wrap("<div class='progress'></div>");
@@ -23,7 +23,7 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		$("#languages li.proficiency-professional_working .progress-bar").css("width", "60%");
 		$("#languages li.proficiency-full_professional .progress-bar").css("width", "80%");
 		$("#languages li.proficiency-native_or_bilingual .progress-bar").css("width", "100%");
-		
+
 		$("#phoneNumbers ul, #twitterAccounts ul, #memberUrlResources ul, #imAccounts ul").addClass("list-unstyled removebottommargin");
 		$("#phoneNumbers li").prepend("<i class='fa fa-phone fa-2'></i>&nbsp;");
 		$("#twitterAccounts li").prepend("<i class='fa fa-twitter fa-2'></i>&nbsp;");
@@ -36,19 +36,19 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		$("#emailAddress").prepend("<i class='fa fa-envelope fa-2'></i>&nbsp;");
 		$("#location").prepend("<i class='fa fa-globe fa-2'></i>&nbsp;");
 		$("#mainAddress").prepend("<i class='fa fa-globe fa-2'></i>&nbsp;");
-		
+
 		$("section>div, section>ul").addClass("panel-body");
 		$("section").addClass("panel panel-primary").prepend("<div class='panel-heading'></div>");
 		$("section").each(function () {
 			$(this).find(".panel-heading").append($(this).find("h3"));
 		});
-		
+
 		$("#summary").addClass("panel panel-info").wrapInner("<div class='panel-body bg-info'></div>");
 		$("section:first").before("<div class='panel panel-primary' id='allcontacts'><div class='panel-body'></div></div>");
 		$("#allcontacts .panel-body").append("<div id='container'><div class='row'><div class='col-sm-6 leftcol'></div><div class='col-sm-6 rightcol'></div></div></div>")
 		$("#allcontacts .leftcol").append($("#emailAddress,#location,#mainAddress,#phoneNumbers,#imAccounts"));
 		$("#allcontacts .rightcol").append($("#memberUrlResources,#twitterAccounts,#publicProfileUrlParent"));
-		
+
 		$(".dates div").addClass("pull-left");
 		$(".dates").addClass("clearfix");
 		$(".dates .endDate").each(function () {
@@ -56,11 +56,11 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 				$(this).prepend("&nbsp;-&nbsp;");
 			}
 		});
-		
+
 		$("#designer")
 			.attr("href", "http://fabrizioballiano.com")
 			.text("Fabrizio Balliano");
-		
+
 		if ($("nav#profileLanguages").length) {
 			var selected_language = $("nav#profileLanguages li.active").text();
 			$("nav#profileLanguages li.active").remove();
@@ -68,7 +68,7 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 			$("#profileLanguagesSelector ul").append($("nav#profileLanguages li"));
 			$("nav#profileLanguages").remove();
 		}
-		
+
 		$("nav#profileSections").affix();
 		$('body').scrollspy({target:'nav'});
 	});
