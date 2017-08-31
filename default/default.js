@@ -1,28 +1,34 @@
 require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
-	require(["//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"], function () {
+	require(["//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"], function () {
 		$("body").show().wrapInner("<div class='container'><div class='row'><div class='col-md-9'></div></div></div>");
 		$("h1").addClass("page-header");
 		$("body>.container>.row").prepend("<div class='col-md-3 hidden-xs hidden-sm'></div>");
 		$("body>.container>.row>.col-md-3").append($("nav"));
 		$("nav#profileSections").prepend($("#picture"));
 		$("nav#profileSections ul").addClass("nav nav-pills nav-stacked");
+
+		/*
 		$("#skills ul").addClass("list-unstyled");
 		$("#skills li").addClass("pull-left");
 		$("#skills li:not(:last)").append(",&nbsp;");
 		$("#skills li:last").append(".");
-		$("#positions ul, #honorsAwards ul, #educations ul, #publications ul, #certifications ul, #recommendationsReceived ul").addClass("list-group");
-		$("#positions ul li, #honorsAwards ul li, #educations ul li, #publications ul li, #certifications ul li, #recommendationsReceived ul li").addClass("list-group-item");
+		*/
+
+		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #recommendationsReceived>ul").addClass("list-group");
+		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #recommendationsReceived>ul>li").addClass("list-group-item");
+
+        $("#languages ul").addClass("list-unstyled");
+        $("#languages .fluency").addClass("progress-bar").attr("aria-valuemin", "0").attr("aria-valuemax", "5");
+        $("#languages .fluency").wrap("<div class='progress'></div>");
+        $("#languages .fluency-1").css("width", "20%");
+        $("#languages .fluency-2").css("width", "40%");
+        $("#languages .fluency-3").css("width", "60%");
+        $("#languages .fluency-4").css("width", "80%");
+        $("#languages .fluency-5").css("width", "100%");
+
+		/*
 		$(".recommender").addClass("text-right").css("font-style", "italic");
 		$("#picture").addClass("img-circle").wrap("<a href='#'></a>");
-
-		$("#languages ul").addClass("list-unstyled");
-		$("#languages .proficiency").addClass("progress-bar").attr("aria-valuemin", "0").attr("aria-valuemax", "100");
-		$("#languages .proficiency").wrap("<div class='progress'></div>");
-		$("#languages li.proficiency-elementary .progress-bar").css("width", "20%");
-		$("#languages li.proficiency-limited_working .progress-bar").css("width", "40%");
-		$("#languages li.proficiency-professional_working .progress-bar").css("width", "60%");
-		$("#languages li.proficiency-full_professional .progress-bar").css("width", "80%");
-		$("#languages li.proficiency-native_or_bilingual .progress-bar").css("width", "100%");
 
 		$("#phoneNumbers ul, #twitterAccounts ul, #memberUrlResources ul, #imAccounts ul").addClass("list-unstyled removebottommargin");
 		$("#phoneNumbers li").prepend("<i class='fa fa-phone fa-2'></i>&nbsp;");
@@ -56,10 +62,11 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 				$(this).prepend("&nbsp;-&nbsp;");
 			}
 		});
+		*/
 
 		$("#designer")
-			.attr("href", "http://fabrizioballiano.com")
-			.text("Fabrizio Balliano");
+			.attr("href", "http://velocv.com")
+			.text("VeloCV");
 
 		if ($("nav#profileLanguages").length) {
 			var selected_language = $("nav#profileLanguages li.active").text();
