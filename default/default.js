@@ -7,15 +7,30 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		$("nav#profileSections").prepend($("#picture"));
 		$("nav#profileSections ul").addClass("nav nav-pills nav-stacked");
 
-		/*
-		$("#skills ul").addClass("list-unstyled");
-		$("#skills li").addClass("pull-left");
-		$("#skills li:not(:last)").append(",&nbsp;");
-		$("#skills li:last").append(".");
-		*/
+        $("#summary").addClass("panel panel-info").wrapInner("<div class='panel-body bg-info'></div>");
 
-		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #recommendationsReceived>ul").addClass("list-group");
-		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #recommendationsReceived>ul>li").addClass("list-group-item");
+		$("ul.highlights,ul.keywords").addClass("list-inline");
+        $("ul.highlights li,ul.keywords li").addClass("badge");
+        $("ul.highlights").prepend("<li style='padding-right: 0'><i class='fa fa-tags'></i></li>");
+
+        $(".dates div").addClass("pull-left");
+        $(".dates").addClass("clearfix");
+        $(".dates").prepend("<i class='fa fa-calendar pull-left'></i>");
+        $(".dates .endDate").each(function () {
+            if ($(this).prev().text()) {
+                $(this).prepend("&nbsp;-&nbsp;");
+            }
+        });
+
+        $(".website").prepend("<i class='fa fa-link'></i>&nbsp;");
+        $(".gpa").prepend("<i class='fa fa-star-o'></i>&nbsp;");
+        $(".publisher").prepend("<i class='fa fa-newspaper-o'></i>&nbsp;");
+
+		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul").addClass("list-group");
+		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li").addClass("list-group-item");
+
+        $("ul.list-group li.list-group-item>h4").addClass("list-group-item-heading");
+        $("ul.list-group li.list-group-item div.summary").addClass("list-group-item-text");
 
         $("#languages ul").addClass("list-unstyled");
         $("#languages .fluency").addClass("progress-bar").attr("aria-valuemin", "0").attr("aria-valuemax", "5");
@@ -49,19 +64,11 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 			$(this).find(".panel-heading").append($(this).find("h3"));
 		});
 
-		$("#summary").addClass("panel panel-info").wrapInner("<div class='panel-body bg-info'></div>");
 		$("section:first").before("<div class='panel panel-primary' id='allcontacts'><div class='panel-body'></div></div>");
 		$("#allcontacts .panel-body").append("<div id='container'><div class='row'><div class='col-sm-6 leftcol'></div><div class='col-sm-6 rightcol'></div></div></div>")
 		$("#allcontacts .leftcol").append($("#emailAddress,#location,#mainAddress,#phoneNumbers,#imAccounts"));
 		$("#allcontacts .rightcol").append($("#memberUrlResources,#twitterAccounts,#publicProfileUrlParent"));
 
-		$(".dates div").addClass("pull-left");
-		$(".dates").addClass("clearfix");
-		$(".dates .endDate").each(function () {
-			if ($(this).prev().text()) {
-				$(this).prepend("&nbsp;-&nbsp;");
-			}
-		});
 		*/
 
 		$("#designer")

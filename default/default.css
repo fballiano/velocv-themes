@@ -10,24 +10,14 @@ nav {
 	margin-top: 30px;
 }
 
-#courses ul {
-	padding-left: 45px;
+.summary {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
-#skills ul {
-	margin-bottom: 0;
-}
-
-#skills ul li {
-	font-weight: normal;
-}
-
+/*
 #picture {
 	margin-bottom: 20px;
-}
-
-.removebottommargin {
-	margin-bottom: 0;
 }
 
 .panel-heading h3 {
@@ -35,9 +25,6 @@ nav {
 	margin-bottom: 5px;
 }
 
-footer {
-	text-align: center;
-}
 
 @media (min-width: 768px) {
 	#picture {
@@ -49,4 +36,13 @@ footer {
 	#picture {
 		width: 262.5px;
 	}
+}
+*/
+
+.fa-calendar {
+    margin-top: 2px;
+}
+
+footer {
+	text-align: center;
 }
