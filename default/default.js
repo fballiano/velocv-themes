@@ -26,8 +26,8 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $(".gpa").prepend("<i class='fa fa-star-o'></i>&nbsp;");
         $(".publisher").prepend("<i class='fa fa-newspaper-o'></i>&nbsp;");
 
-		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul").addClass("list-group");
-		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li, #volunteer>ul>li").addClass("list-group-item");
+		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul, #references>ul").addClass("list-group");
+		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li, #volunteer>ul>li, #references>ul>li").addClass("list-group-item");
 
 		$("#work>ul>li, #volunteer>ul>li").prepend("<div class='header clearfix'></div>");
         $("#work>ul>li").each(function () {
