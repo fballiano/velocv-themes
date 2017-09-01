@@ -9,8 +9,8 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 
         $("#summary").addClass("panel panel-info").wrapInner("<div class='panel-body bg-info'></div>");
 
-		$("ul.highlights,ul.keywords").addClass("list-inline");
-        $("ul.highlights li,ul.keywords li").addClass("badge");
+		$("ul.highlights,ul.keywords,ul.courses").addClass("list-inline");
+        $("ul.highlights li,ul.keywords li,ul.courses li").addClass("badge");
         $("ul.highlights").prepend("<li style='padding-right: 0'><i class='fa fa-tags'></i></li>");
 
         $(".dates div").addClass("pull-left");
@@ -26,8 +26,29 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $(".gpa").prepend("<i class='fa fa-star-o'></i>&nbsp;");
         $(".publisher").prepend("<i class='fa fa-newspaper-o'></i>&nbsp;");
 
-		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul").addClass("list-group");
-		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li").addClass("list-group-item");
+		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul").addClass("list-group");
+		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li, #volunteer>ul>li").addClass("list-group-item");
+
+		$("#work>ul>li, #volunteer>ul>li").prepend("<div class='header clearfix'></div>");
+        $("#work>ul>li").each(function () {
+        	var position = $(this).find(".position");
+        	var company = $(this).find(".company")
+            if (position.length) $(this).find(".header").append(position);
+            if (company.length) $(this).find(".header").append(company);
+            if (position.length && company.length) {
+                position.append("&nbsp;-&nbsp;");
+			}
+        });
+        $("#volunteer>ul>li").each(function () {
+            var position = $(this).find(".position");
+            var company = $(this).find(".organization")
+            if (position.length) $(this).find(".header").append(position);
+            if (company.length) $(this).find(".header").append(company);
+            if (position.length && company.length) {
+                position.append("&nbsp;-&nbsp;");
+            }
+        });
+        $("#work>ul>li .company, #work>ul>li .position, #volunteer>ul>li .organization, #volunteer>ul>li .position").addClass("pull-left");
 
         $("ul.list-group li.list-group-item>h4").addClass("list-group-item-heading");
         $("ul.list-group li.list-group-item div.summary").addClass("list-group-item-text");
