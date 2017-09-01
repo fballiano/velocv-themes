@@ -25,9 +25,10 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $(".website").prepend("<i class='fa fa-link'></i>&nbsp;");
         $(".gpa").prepend("<i class='fa fa-star-o'></i>&nbsp;");
         $(".publisher").prepend("<i class='fa fa-newspaper-o'></i>&nbsp;");
+        $(".awarder").prepend("<i class='fa fa-trophy'></i>&nbsp;");
 
-		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul, #references>ul").addClass("list-group");
-		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li, #volunteer>ul>li, #references>ul>li").addClass("list-group-item");
+		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul, #references>ul, #skills>ul, #awards>ul").addClass("list-group");
+		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li, #volunteer>ul>li, #references>ul>li, #skills>ul>li, #awards>ul>li").addClass("list-group-item");
 
 		$("#work>ul>li, #volunteer>ul>li").prepend("<div class='header clearfix'></div>");
         $("#work>ul>li").each(function () {
@@ -61,6 +62,16 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $("#languages .fluency-3").css("width", "60%");
         $("#languages .fluency-4").css("width", "80%");
         $("#languages .fluency-5").css("width", "100%");
+
+        $("#skills .level").each(function () {
+        	$(this).prop("title", $(this).html());
+		});
+        $("#skills .level").tooltip({placement:'left'});
+        $("#skills .level-1").html('<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+        $("#skills .level-2").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+        $("#skills .level-3").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+        $("#skills .level-4").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>');
+        $("#skills .level-5").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>');
 
 		/*
 		$(".recommender").addClass("text-right").css("font-style", "italic");
