@@ -2,18 +2,17 @@
 @import url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css");
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
-body, #industry {
-	display: none;
-}
+body {display: none}
 
-nav {
-	margin-top: 30px;
-}
+nav {margin-top: 30px}
 
 .summary {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
+#references .name {font-style: italic}
+#references .name:before {content: '\2014 \00A0'}
 
 /*
 #picture {
@@ -39,10 +38,6 @@ nav {
 }
 */
 
-.fa-calendar {
-    margin-top: 2px;
-}
+.fa-calendar {margin-top: 2px}
 
-footer {
-	text-align: center;
-}
+footer {text-align: center}

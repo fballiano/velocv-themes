@@ -12,6 +12,7 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 		$("ul.highlights,ul.keywords,ul.courses").addClass("list-inline");
         $("ul.highlights li,ul.keywords li,ul.courses li").addClass("badge");
         $("ul.highlights").prepend("<li style='padding-right: 0'><i class='fa fa-tags'></i></li>");
+        $("ul.courses").prepend("<li style='padding-right: 0'><i class='fa fa-graduation-cap'></i></li>");
 
         $(".dates div").addClass("pull-left");
         $(".dates").addClass("clearfix");
@@ -26,11 +27,20 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $(".gpa").prepend("<i class='fa fa-star-o'></i>&nbsp;");
         $(".publisher").prepend("<i class='fa fa-newspaper-o'></i>&nbsp;");
         $(".awarder").prepend("<i class='fa fa-trophy'></i>&nbsp;");
+        $("#email").prepend("<i class='fa fa-envelope-o'></i>&nbsp;");
+        $("#phone").prepend("<i class='fa fa-phone'></i>&nbsp;");
+        $("#location").prepend("<i class='fa fa-globe'></i>&nbsp;");
+        $("#education .area").prepend("<i class='fa fa-tags'></i>&nbsp;");
+
+        $("#profiles").addClass("list-inline");
+		$("#profiles a").each(function () {
+			$(this).prepend("<i class='fa fa-" + $(this).prop("class") + "'></i>&nbsp;");
+        });
 
 		$("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul, #references>ul, #skills>ul, #awards>ul").addClass("list-group");
 		$("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li, #volunteer>ul>li, #references>ul>li, #skills>ul>li, #awards>ul>li").addClass("list-group-item");
 
-		$("#work>ul>li, #volunteer>ul>li").prepend("<div class='header clearfix'></div>");
+		$("#work>ul>li, #volunteer>ul>li, #education>ul>li").prepend("<div class='header clearfix'></div>");
         $("#work>ul>li").each(function () {
         	var position = $(this).find(".position");
         	var company = $(this).find(".company")
@@ -49,7 +59,16 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
                 position.append("&nbsp;-&nbsp;");
             }
         });
-        $("#work>ul>li .company, #work>ul>li .position, #volunteer>ul>li .organization, #volunteer>ul>li .position").addClass("pull-left");
+        $("#education>ul>li").each(function () {
+            var position = $(this).find(".studyType");
+            var company = $(this).find(".institution")
+            if (position.length) $(this).find(".header").append(position);
+            if (company.length) $(this).find(".header").append(company);
+            if (position.length && company.length) {
+                position.append("&nbsp;-&nbsp;");
+            }
+        });
+        $("#work>ul>li .company, #work>ul>li .position, #volunteer>ul>li .organization, #volunteer>ul>li .position, #education>ul>li .studyType").addClass("pull-left");
 
         $("ul.list-group li.list-group-item>h4").addClass("list-group-item-heading");
         $("ul.list-group li.list-group-item div.summary").addClass("list-group-item-text");
@@ -73,35 +92,19 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $("#skills .level-4").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>');
         $("#skills .level-5").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>');
 
-		/*
-		$(".recommender").addClass("text-right").css("font-style", "italic");
-		$("#picture").addClass("img-circle").wrap("<a href='#'></a>");
-
-		$("#phoneNumbers ul, #twitterAccounts ul, #memberUrlResources ul, #imAccounts ul").addClass("list-unstyled removebottommargin");
-		$("#phoneNumbers li").prepend("<i class='fa fa-phone fa-2'></i>&nbsp;");
-		$("#twitterAccounts li").prepend("<i class='fa fa-twitter fa-2'></i>&nbsp;");
-		$("#memberUrlResources li").prepend("<i class='fa fa-link fa-2'></i>&nbsp;");
-		$("#publicProfileUrl").wrap("<div id='publicProfileUrlParent'></div>");
-		$("#publicProfileUrlParent").prepend("<i class='fa fa-linkedin fa-2'></i>&nbsp;");
-		$("#imAccounts li.imAccounts-gtalk").prepend("<i class='fa fa-google fa-2'></i>&nbsp;");
-		$("#imAccounts li.imAccounts-skype").prepend("<i class='fa fa-skype fa-2'></i>&nbsp;");
-		$("#imAccounts li:not(:has('i'))").prepend("<i class='fa fa-comments-o fa-2'></i>&nbsp;");
-		$("#emailAddress").prepend("<i class='fa fa-envelope fa-2'></i>&nbsp;");
-		$("#location").prepend("<i class='fa fa-globe fa-2'></i>&nbsp;");
-		$("#mainAddress").prepend("<i class='fa fa-globe fa-2'></i>&nbsp;");
 
 		$("section>div, section>ul").addClass("panel-body");
-		$("section").addClass("panel panel-primary").prepend("<div class='panel-heading'></div>");
+		$("section:not('#summary')").addClass("panel panel-primary").prepend("<div class='panel-heading'></div>");
 		$("section").each(function () {
-			$(this).find(".panel-heading").append($(this).find("h3"));
+		    $(this).find(".panel-heading").append($(this).find("h3"));
 		});
 
-		$("section:first").before("<div class='panel panel-primary' id='allcontacts'><div class='panel-body'></div></div>");
+        /*
+        $("#picture").addClass("img-circle").wrap("<a href='#'></a>");
 		$("#allcontacts .panel-body").append("<div id='container'><div class='row'><div class='col-sm-6 leftcol'></div><div class='col-sm-6 rightcol'></div></div></div>")
 		$("#allcontacts .leftcol").append($("#emailAddress,#location,#mainAddress,#phoneNumbers,#imAccounts"));
 		$("#allcontacts .rightcol").append($("#memberUrlResources,#twitterAccounts,#publicProfileUrlParent"));
-
-		*/
+		/**/
 
 		$("#designer")
 			.attr("href", "http://velocv.com")
