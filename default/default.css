@@ -3,41 +3,18 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 body {display: none}
-
 nav {margin-top: 30px}
-
-.summary {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
+#picture {margin-bottom: 20px}
+.summary {margin-top: 10px;margin-bottom: 10px;}
 #references .name {font-style: italic}
 #references .name:before {content: '\2014 \00A0'}
-
-/*
-#picture {
-	margin-bottom: 20px;
-}
-
-.panel-heading h3 {
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
+.fa-calendar {margin-top: 2px}
+footer {text-align: center}
 
 @media (min-width: 768px) {
-	#picture {
-		width: 212.5px;
-	}
+	#picture {width: 212.5px}
 }
 
 @media (min-width: 1200px) {
-	#picture {
-		width: 262.5px;
-	}
+	#picture {width: 262.5px}
 }
-*/
-
-.fa-calendar {margin-top: 2px}
-
-footer {text-align: center}
