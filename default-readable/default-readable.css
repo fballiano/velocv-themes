@@ -1,55 +1,19 @@
-@import url("//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/readable/bootstrap.min.css");
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+@import url("//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css");
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
-body, #industry {
-	display: none;
-}
-
-nav {
-	margin-top: 30px;
-}
-
-#courses ul {
-	padding-left: 45px;
-}
-
-#skills ul {
-	margin-bottom: 0;
-}
-
-#skills ul li {
-	font-weight: normal;
-}
-
-#picture {
-	margin-bottom: 20px;
-}
-
-.removebottommargin {
-	margin-bottom: 0;
-}
-
-.panel-heading h3 {
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
-#summary {
-	margin-top: 40px;
-}
-
-footer {
-	text-align: center;
-}
+body {display: none}
+nav {margin-top: 30px}
+#picture {margin-bottom: 20px}
+.summary {margin-top: 10px;margin-bottom: 10px;}
+#references .name {font-style: italic}
+#references .name:before {content: '\2014 \00A0'}
+.fa-calendar {margin-top: 2px}
+footer {text-align: center}
 
 @media (min-width: 768px) {
-	#picture {
-		width: 212.5px;
-	}
+	#picture {width: 212.5px}
 }
 
 @media (min-width: 1200px) {
-	#picture {
-		width: 262.5px;
-	}
+	#picture {width: 262.5px}
 }

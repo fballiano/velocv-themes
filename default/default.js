@@ -132,6 +132,7 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 			$("nav#profileLanguages").remove();
 		}
 
+        $(".fa").addClass("fw");
 		$("nav#profileSections").affix();
 		$('body').scrollspy({target:'nav'});
 	});
