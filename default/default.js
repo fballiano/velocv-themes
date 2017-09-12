@@ -15,6 +15,16 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $("ul.highlights").prepend("<li style='padding-right: 0'><i class='fa fa-tags'></i></li>");
         $("ul.courses").prepend("<li style='padding-right: 0'><i class='fa fa-graduation-cap'></i></li>");
 
+        if ($("#location").length) {
+            var location2 = $("<ul id='location' class='list-unstyled'></ul>");
+            $("#location div").each(function () {
+                location2.append("<li id='" + this.id + "'>" + $(this).html() + "</li>");
+            });
+            $("#location").after(location2).remove();
+            $("#location li").prepend("<i class='fa fa-globe'></i>&nbsp;");
+            $("#location li i:not(:first)").css("visibility", "hidden");
+        }
+
         $(".dates div").addClass("pull-left");
         $(".dates").addClass("clearfix");
         $(".dates").prepend("<i class='fa fa-calendar pull-left'></i>");
@@ -30,7 +40,6 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $(".awarder").prepend("<i class='fa fa-trophy'></i>&nbsp;");
         $("#email").prepend("<i class='fa fa-envelope-o'></i>&nbsp;");
         $("#phone").prepend("<i class='fa fa-phone'></i>&nbsp;");
-        $("#location").prepend("<i class='fa fa-globe'></i>&nbsp;");
         $("#education .area").prepend("<i class='fa fa-tags'></i>&nbsp;");
 
         $("#profiles").addClass("list-unstyled");
@@ -92,7 +101,6 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $("#skills .level-3").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
         $("#skills .level-4").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>');
         $("#skills .level-5").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>');
-
 
 		$("section:not('#summary')").addClass("panel panel-primary").prepend("<div class='panel-heading'></div>");
 		$('#basics .panel-heading').after("<div class='panel-body'></div>");
