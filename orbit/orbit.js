@@ -1,6 +1,6 @@
 require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
     require(["//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"], function () {
-        $("body").show().prepend("<div class='wrapper'><div class='sidebar-wrapper'><div class='profile-container'></div></div><div class='main-wrapper'></div></div>");
+        $("body").prepend("<div class='wrapper'><div class='sidebar-wrapper'><div class='profile-container'></div></div><div class='main-wrapper'></div></div>");
         if ($("#picture").length) {
             $(".profile-container")
                 .css("padding", 0)
