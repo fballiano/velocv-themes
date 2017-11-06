@@ -16,12 +16,12 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $("section li>h4").addClass("job-title");
 
         $(".sidebar-wrapper").append("<div class='contact-container container-block'><ul class='list-unstyled contact-list'></ul></div>");
-        if ($("#city")) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#city").html() + '</li>');
-        if ($("#region")) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#region").html() + '</li>');
-        if ($("#countryCode")) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#countryCode").html() + '</li>');
-        if ($("#email")) $("ul.contact-list").append('<li><i class="fa fa-envelope-o"></i>' + $("#email").html() + '</li>');
-        if ($("#phone")) $("ul.contact-list").append('<li><i class="fa fa-phone"></i>' + $("#phone").html() + '</li>');
-        if ($("#website")) $("ul.contact-list").append('<li><i class="fa fa-link"></i>' + $("#website").html() + '</li>');
+        if ($("#city").length) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#city").html() + '</li>');
+        if ($("#region").length) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#region").html() + '</li>');
+        if ($("#countryCode").length) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#countryCode").html() + '</li>');
+        if ($("#email").length) $("ul.contact-list").append('<li><i class="fa fa-envelope-o"></i>' + $("#email").html() + '</li>');
+        if ($("#phone").length) $("ul.contact-list").append('<li><i class="fa fa-phone"></i>' + $("#phone").html() + '</li>');
+        if ($("#website").length) $("ul.contact-list").append('<li><i class="fa fa-link"></i>' + $("#website").html() + '</li>');
         $("#profiles a").each(function () {
             $(this).prepend("<i class='fa fa-" + $(this).prop("class") + "'></i>");
             $("ul.contact-list").append('<li>' + $(this).html() + '</li>');
