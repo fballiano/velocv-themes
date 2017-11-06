@@ -299,4 +299,7 @@ p {
 /* Large devices (large desktops, 1200px and up) */
 /* Ex-Large devices (large desktops, 1200px and up) */
 
-ul.contact-list li {white-space: nowrap;overflow: hidden}
+ul.contact-list li {white-space:nowrap;overflow: hidden}
+#publications .upper-row {margin-bottom:30px}
+#references .name {font-style:italic;font-weight:bold}
+#references .name:before {content: "- "}

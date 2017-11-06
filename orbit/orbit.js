@@ -174,6 +174,7 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
 
         $("#skills").addClass("skillset");
         $("#skills .name").addClass("level-title").css("font-weight", "bold");
+        $("#skills>ul").addClass("clearfix")
         $("#skills>ul>li").css("margin-bottom", "10px");
         $("#skills .keywords").css("margin-top", 0);
         $("#skills>ul>li .level").addClass("level-bar-inner").text('').wrap("<div class='level-bar'></div>");
