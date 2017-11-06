@@ -86,11 +86,11 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $("#languages ul").addClass("list-unstyled");
         $("#languages .fluency").addClass("progress-bar").attr("aria-valuemin", "0").attr("aria-valuemax", "5");
         $("#languages .fluency").wrap("<div class='progress'></div>");
-        $("#languages .fluency-1").css("width", "20%");
-        $("#languages .fluency-2").css("width", "40%");
-        $("#languages .fluency-3").css("width", "60%");
-        $("#languages .fluency-4").css("width", "80%");
-        $("#languages .fluency-5").css("width", "100%");
+        $("#languages .fluency-elementary").css("width", "20%");
+        $("#languages .fluency-limited-working").css("width", "40%");
+        $("#languages .fluency-professional-working").css("width", "60%");
+        $("#languages .fluency-full-professional").css("width", "80%");
+        $("#languages .fluency-native-or-bilingual").css("width", "100%");
 
         $("#skills .level").each(function () {
         	$(this).prop("title", $(this).html());
