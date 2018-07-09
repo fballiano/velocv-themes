@@ -104,7 +104,10 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
             $("#skills .level-4").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>');
             $("#skills .level-5").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>');
         } else {
-
+            //$("#skills>ul").removeClass("list-group").addClass("list-inline");
+            var skills = [];
+            $("#skills li").each (function () {skills.push($(this).text().trim())});
+            $("#skills>ul").replaceWith("<div class='panel-body'>" + skills.join(", ") + "</div>");
         }
 
 		$("section:not('#summary')").addClass("panel panel-primary").prepend("<div class='panel-heading'></div>");
