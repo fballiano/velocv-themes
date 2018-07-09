@@ -93,15 +93,19 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $("#languages .fluency-full-professional").css("width", "80%");
         $("#languages .fluency-native-or-bilingual").css("width", "100%");
 
-        $("#skills .level").each(function () {
-        	$(this).prop("title", $(this).html());
-		});
-        $("#skills .level").tooltip({placement:'left'});
-        $("#skills .level-1").html('<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        $("#skills .level-2").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        $("#skills .level-3").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
-        $("#skills .level-4").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>');
-        $("#skills .level-5").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>');
+        if ($("#skills .level").length > 0) {
+            $("#skills .level").each(function () {
+                $(this).prop("title", $(this).html());
+            });
+            $("#skills .level").tooltip({placement:'left'});
+            $("#skills .level-1").html('<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+            $("#skills .level-2").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+            $("#skills .level-3").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>');
+            $("#skills .level-4").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>');
+            $("#skills .level-5").html('<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>');
+        } else {
+
+        }
 
 		$("section:not('#summary')").addClass("panel panel-primary").prepend("<div class='panel-heading'></div>");
 		$('#basics .panel-heading').after("<div class='panel-body'></div>");
