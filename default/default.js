@@ -25,6 +25,7 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
             $("#location li i:not(:first)").css("visibility", "hidden");
         }
 
+        $(".website").prepend("<i class='fa fa-link'></i>&nbsp;");
         $(".dates div").addClass("pull-left");
         $(".dates").addClass("clearfix");
         $(".dates").prepend("<i class='fa fa-calendar pull-left'></i>");
