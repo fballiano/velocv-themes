@@ -8,6 +8,7 @@ nav {margin-top: 30px}
 #references .name {font-style: italic}
 #references .name:before {content: '\2014 \00A0'}
 .fa-calendar {margin-top: 2px}
+.website {white-space: nowrap; overflow: hidden}
 footer {text-align: center}
 
 @media (min-width: 768px) {
