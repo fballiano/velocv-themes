@@ -8,6 +8,9 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         } else {
             $(".profile-container").remove();
         }
+        if ($("#summary").length == 0) {
+            $("<section id='summary'></section>").prependTo(".main-wrapper");
+        }
         $("h1").prependTo("#summary");
         $("h1").after("<h3 class='tagline'>" + $("h2").html() + "</h3>")
         $("section").addClass("section");
@@ -175,7 +178,6 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         $("#skills").addClass("skillset");
         $("#skills .name").addClass("level-title").css("font-weight", "bold");
         $("#skills>ul").addClass("clearfix")
-        $("#skills>ul>li").css("margin-bottom", "10px");
         $("#skills .keywords").css("margin-top", 0);
         $("#skills>ul>li .level").addClass("level-bar-inner").text('').wrap("<div class='level-bar'></div>");
         $("#skills .level-1").css("width", "20%");
