@@ -16,23 +16,29 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
     $("nav#profileSections li").addClass("page-scroll");
     $("nav#profileSections").prepend('<div class="navbar-header page-scroll"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>');
     
-    $("section").wrapInner("<div class='container'></div>");
+    $("section:not('#summary')").wrapInner("<div class='container'></div>");
     
     $("section h3").each(function () {
         $(this).replaceWith('<div class="text-center animateup animated fadeInUp"><div class="inline-icons-text section-heading"><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div><div class="inline-icon heading-width"><span class="heading-text">' + $(this).text() + '</span></div><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div></div></div>');
     });
+
+      $(".dates .endDate").each(function () {
+            if ($(this).prev().text()) {
+                $(this).prepend("&nbsp;-&nbsp;");
+            }
+        });
     
     $("section#languages li").each(function () {
-        var level = $(this).attr("class");
-        if (level == "proficiency-native_or_bilingual") level = 100;
-        if (level == "proficiency-full_professional") level = 80;
-        if (level == "proficiency-professional_working") level = 60;
-        if (level == "proficiency-limited_working") level = 40;
-        if (level == "proficiency-elementary") level = 20;
-		if (level == "proficiency-") {
-			$(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><div class="placeholder" style="height:205px"></div><h3>' + $(this).children("h4").text() + '</h3><p></p></div>');
+        var level = $(this).children(".fluency").attr("class");
+        if (level == "fluency fluency-native-or-bilingual") level = 100;
+        if (level == "fluency fluency-full-professional") level = 80;
+        if (level == "fluency fluency-professional-working") level = 60;
+        if (level == "fluency fluency-limited-working") level = 40;
+        if (level == "fluency fluency-elementary") level = 20;
+		if (level == "fluency fluency-") {
+			$(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><div class="placeholder" style="height:205px"></div><h3>' + $(this).children(".language").text() + '</h3><p></p></div>');
 		} else {
-			$(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><input class="knob" readonly="readonly" data-width="150" data-fgColor="#2c3e50" data-skin="tron" data-thickness=".1" value="' + level + '"><h3>' + $(this).children("h4").text() + '</h3><p>' + $(this).children("div.proficiency").text() + '</p></div>');
+			$(this).replaceWith('<div class="col-md-3 col-sm-6 animateleft"><input class="knob" readonly="readonly" data-width="150" data-fgColor="#2c3e50" data-skin="tron" data-thickness=".1" value="' + level + '"><h3>' + $(this).children(".language").text() + '</h3><p>' + $(this).children("div.fluency").text() + '</p></div>');
 		}
     });
     $("section#languages ul").replaceWith('<div class="row text-center">' + ($("section#languages ul").html()?$("section#languages ul").html():'')  + '</div>');
@@ -45,7 +51,8 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
     $("#picture").addClass("about-photo");
     $("nav#profileSections").after('<section id="about"><div class="container"><div class="text-center animateup animated fadeInUp"><div class="inline-icons-text section-heading"><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div><div class="inline-icon heading-width"><span class="heading-text">' + $("h1").text() + '</span></div><div class="inline-icon"><hr><hr><hr><hr><hr><hr></div></div></div><p class="text-center">' + $("h2").text() + '</p><div class="gap-30"></div><div class="row equalheight"><div class="col-md-4 left-services text-right"></div><div class="col-md-4">' + $("#picture")[0].outerHTML + '</div><div class="col-md-4 right-services"></div></div><div class="gap-30"></div><p class="velocv-summary">' + ($("#summary").html()?$("#summary").html():'') + '</p></div></section>');	
 	if ($(".velocv-summary").text().length<300) $(".velocv-summary").addClass("text-center");
-	
+
+
     $("h1,h2,#summary,img:last,#industry").remove();
     $("#phoneNumbers ul, #twitterAccounts ul, #memberUrlResources ul, #imAccounts ul").addClass("list-unstyled removebottommargin");
     $("#phoneNumbers li").append("&nbsp;<i class='fa fa-phone fa-2'></i>");
@@ -64,30 +71,30 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
     $("footer")
 		.addClass("text-center")
 		.wrapInner('<div class="footer-below"><div class="container"><div class="row"><div class="col-lg-12"></div></div></div></div>');
-	$("#positions>.container>ul").replaceWith("<div class='timeline'>" + $("#positions>.container>ul").html() + "</div>");
-	$("#positions>.container>.timeline>li").each(function () {
-		$(this).replaceWith("<div class='row animateright animated zoomIn'><div class='col-xs-6'><span class='fa-stack fa-2x right'><i class='fa fa-circle fa-1x fa-stack-2x'></i><i class='fa fa-tags fa-stack-1x fa-inverse service-icon'></i></span><div class='left-content'><h3 class='work'>" + $(this).children(".title").text() + "</h3><h3 class='organization'>" + $(this).children(".company").text() + "</h3></div></div><div class='col-xs-6'><div class='right-content'><h3 class='work'>" + ($(this).children(".dates").html() ? $(this).children(".dates").html() : "") + "</h3><p>" + ($(this).children(".summary").html() ? $(this).children(".summary").html() : "") + "</p></div></div></div>");
+	$("#work>.container>ul").replaceWith("<div class='timeline'>" + $("#work>.container>ul").html() + "</div>");
+	$("#work>.container>.timeline>li").each(function () {
+		$(this).replaceWith("<div class='row animateright animated zoomIn'><div class='col-xs-6'><span class='fa-stack fa-2x right'><i class='fa fa-circle fa-1x fa-stack-2x'></i><i class='fa fa-tags fa-stack-1x fa-inverse service-icon'></i></span><div class='left-content'><h3 class='work'>" + $(this).children(".position").text() + "</h3><h3 class='organization'>" + $(this).children(".company").text() + "</h3></div></div><div class='col-xs-6'><div class='right-content'><h3 class='work'>" + ($(this).children(".dates").text() ? $(this).children(".dates").text() : "") + "</h3><p>" + ($(this).children(".summary").html() ? $(this).children(".summary").html() : "") + "</p></div></div></div>");
 	});
-	$("#positions>.container>.timeline").append('<hr class="bottom">');
+	$("#work>.container>.timeline").append('<hr class="bottom">');
 	
-	$("#educations>.container>ul").replaceWith("<div class='timeline'>" + $("#educations>.container>ul").html() + "</div>");
-	$("#educations>.container>.timeline>li").each(function () {
-		$(this).replaceWith("<div class='row animateright animated zoomIn'><div class='col-xs-6'><span class='fa-stack fa-2x right'><i class='fa fa-circle fa-1x fa-stack-2x'></i><i class='fa fa-tags fa-stack-1x fa-inverse service-icon'></i></span><div class='left-content'><h3 class='work'>" + $(this).children(".degree").text() + "</h3><h3 class='organization'>" + $(this).children(".schoolName").text() + "</h3></div></div><div class='col-xs-6'><div class='right-content'><h3 class='work'>" + ($(this).children(".dates").html() ? $(this).children(".dates").html() : "") + "</h3><p>" + ($(this).children(".fieldOfStudy").html() ? $(this).children(".fieldOfStudy").html() : "") + "</p></div></div></div>");
+	$("#education>.container>ul").replaceWith("<div class='timeline'>" + $("#education>.container>ul").html() + "</div>");
+	$("#education>.container>.timeline>li").each(function () {
+		$(this).replaceWith("<div class='row animateright animated zoomIn'><div class='col-xs-6'><span class='fa-stack fa-2x right'><i class='fa fa-circle fa-1x fa-stack-2x'></i><i class='fa fa-tags fa-stack-1x fa-inverse service-icon'></i></span><div class='left-content'><h3 class='work'>" + $(this).children(".studyType").text() + "</h3><h3 class='organization'>" + $(this).children(".institution").text() + "</h3></div></div><div class='col-xs-6'><div class='right-content'><h3 class='work'>" + ($(this).children(".dates").text() ? $(this).children(".dates").text() : "") + "</h3><p>" + ($(this).children(".gpa").html() ? $(this).children(".gpa").html() : "") + "</p><p>" + ($(this).children(".area").html() ? $(this).children(".area").html() : "") + "</p></div></div></div>");
 	});
-	$("#educations>.container>.timeline").append('<hr class="bottom">');
+	$("#education>.container>.timeline").append('<hr class="bottom">');
 	
-	$("section#recommendationsReceived").addClass("grey-area testimonial-section");
-	$("section#recommendationsReceived>.container").addClass("animatezoomin");
-	$("section#recommendationsReceived>.container>ul").replaceWith('<div class="row"><div class="col-sm-12"><div id="testimonials-2" class="slide testimonial testimonial-version1 animateright"><div class="carousel-inner">' + $("section#recommendationsReceived>.container>ul").html() + '</div></div></div></div>');
-	$("section#recommendationsReceived .carousel-inner li").each(function () {
-		$(this).replaceWith('<div class="item"><div class="textbox"><p class="reviewcomment" style="text-align:left">' + $(this).children(".recommendationText").html() + '</p></div><div class="fullwidth"><div class="testimonial-metadata"><h3>' + $(this).children(".recommender").text() + '</h3><br /></div></div></div>');
+	$("section#references").addClass("grey-area testimonial-section");
+	$("section#references>.container").addClass("animatezoomin");
+	$("section#references>.container>ul").replaceWith('<div class="row"><div class="col-sm-12"><div id="testimonials-2" class="slide testimonial testimonial-version1 animateright"><div class="carousel-inner">' + $("section#references>.container>ul").html() + '</div></div></div></div>');
+	$("section#references .carousel-inner li").each(function () {
+		$(this).replaceWith('<div class="item"><div class="textbox"><p class="reviewcomment" style="text-align:left">' + $(this).children(".reference").html() + '</p></div><div class="fullwidth"><div class="testimonial-metadata"><h3>' + $(this).children(".name").text() + '</h3><br /></div></div></div>');
 	});
-	$("section#recommendationsReceived .carousel-inner").after('<div class="testimonial-control text-center"><a class="left  btn btn-primary btn-xs" href="#testimonials-2" data-slide="prev"><i class="fa fa-angle-left fa-2x"></i></a><a class="right btn btn-primary btn-xs" href="#testimonials-2" data-slide="next"><i class="fa fa-angle-right fa-2x"></i></a></div>');	
-	$("section#recommendationsReceived>.container>div:first").replaceWith("<h2 class='main_heading animatezoomin animated zoomIn'>" + $("#recommendationsReceived .heading-text").text() + "</h2>");
-	$("section#recommendationsReceived").prepend($("section#recommendationsReceived h2"));
-	$("section#recommendationsReceived h2").after('<div class="gap-50"></div>');
-	$("section#recommendationsReceived .item:first").addClass("active");
-	$("section#recommendationsReceived").next("section").css("padding-top", "100px");
+	$("section#references .carousel-inner").after('<div class="testimonial-control text-center"><a class="left  btn btn-primary btn-xs" href="#testimonials-2" data-slide="prev"><i class="fa fa-angle-left fa-2x"></i></a><a class="right btn btn-primary btn-xs" href="#testimonials-2" data-slide="next"><i class="fa fa-angle-right fa-2x"></i></a></div>');	
+	$("section#references>.container>div:first").replaceWith("<h2 class='main_heading animatezoomin animated zoomIn'>" + $("#references .heading-text").text() + "</h2>");
+	$("section#references").prepend($("section#references h3"));
+	$("section#references h2").after('<div class="gap-50"></div>');
+	$("section#references .item:first").addClass("active");
+	$("section#references").next("section").css("padding-top", "100px");
 	
 	if ($("#interests div:last").height()<40) $("#interests div:last").addClass("text-center");
 	
@@ -95,7 +102,6 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
         .attr("href", "http://themifycloud.com/downloads/resume-plus-responsive-one-page-template/")
         .text("ThemifyCloud");
 
-    
     
     
     
