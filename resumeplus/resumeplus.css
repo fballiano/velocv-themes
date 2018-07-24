@@ -16,28 +16,54 @@ footer a, footer a:hover {
 	margin-top: 15px;
 }
 
-.equalheight {
-	display: table;
-}
-
-.equalheight .col-md-4 {
-    float: none;
-    display: table-cell;
-    vertical-align: middle;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
 #profileLanguagesSelector, #profileLanguagesSelector * {
 	background: #262a2d;
 	color: white;
 	border: none;
 }
 
-body {
+body, .show-only-mobile {
 	display: none;
+}
+
+#about .show-only-mobile {
+	padding-top: 30px;
+	text-align: center;
 }
 
 .left-services div {
 	margin-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+	.equalheight {
+		display: table;
+	}
+
+	.equalheight .col-md-4 {
+		float: none;
+		display: table-cell;
+		vertical-align: middle;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 600px) {
+	.equalheight .left-services, .equalheight .right-services {
+		display: none;
+	}
+
+	.equalheight div {
+		text-align: center;
+		padding: 0;
+	}
+	
+	#picture {
+		width: 80%;
+	}
+
+	.show-only-mobile {
+		display: block;
+	}
 }
