@@ -38,6 +38,7 @@ body, .show-only-mobile {
 @media (min-width: 600px) {
 	.equalheight {
 		display: table;
+		width: 100%;
 	}
 
 	.equalheight .col-md-4 {
