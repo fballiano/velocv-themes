@@ -246,7 +246,6 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
                 if (width < 600) {
                     var scale = width/600;
                     $("meta[name=viewport]")[0].content = 'width=device-width, initial-scale=' + scale + ', user-scalable=no';
-                    console.log('width=device-width, initial-scale=' + scale + ', user-scalable=no');
                 }
 
                 setTimeout(function () {
