@@ -232,5 +232,31 @@ require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
             $("#profileLanguagesSelector ul").append($("nav#profileLanguages li"));
             $("nav#profileLanguages").remove();
         }
+
+        var currentlyresizing = false;
+        $(window).resize(function () {
+            if (currentlyresizing) return;
+
+            currentlyresizing = true;
+            $("meta[name=viewport]")[0].content = 'width=device-width, initial-scale=1, user-scalable=no';
+
+            setTimeout(function () {
+                var width = $(window).width();
+                console.log($(window).width());
+                if (width < 600) {
+                    var scale = width/600;
+                    $("meta[name=viewport]")[0].content = 'width=device-width, initial-scale=' + scale + ', user-scalable=no';
+                    console.log('width=device-width, initial-scale=' + scale + ', user-scalable=no');
+                } else {
+
+                    console.log('width=device-width, initial-scale=1, user-scalable=no');
+                }
+
+                setTimeout(function () {
+                    currentlyresizing = false;
+                }, 200);
+            }, 0);
+        });
+        $(window).resize();
     });
 });
