@@ -6,21 +6,12 @@ require(["//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js","//
 		$("header .banner-text").prepend($("h1"));
 		$("h1").addClass("responsive-headline");
 		$("h2").remove();
-		$("#memberUrlResources li a").html('<i class="fa fa-link"></i');
-		$("#twitterAccounts li a").html('<i class="fa fa-twitter"></i');
-		$(".imAccounts-gtalk").each(function () {
-			$(this).html('<a href="gtalk:' + $(this).text() + '"><i class="fa fa-google"></i></a>')
-		});
-		$(".imAccounts-skype").each(function () {
-			$(this).html('<a href="skype:' + $(this).text() + '"><i class="fa fa-skype"></i></a>')
-		});
-		$("#twitterAccounts li a, #memberUrlResources li a").attr("target", "_blank");
-		$("header ul.social")
-			.append($('<li><a href="' + $("#publicProfileUrl").attr("href") + '" target="_blank"><i class="fa fa-linkedin"></i></a></li>'))
-			.append($("#twitterAccounts li"))
-			.append($("#imAccounts li"))
-			.append($("#memberUrlResources li"));
-		$("#industry,#imAccounts,#twitterAccounts,#memberUrlResources,#publicProfileUrl").remove();
+
+        $("#profiles a").each(function () {
+            $(this).html("<i class='fa fa-" + $(this).prop("class") + "'></i>");
+        });
+
+		$("header ul.social").append($("#profiles"));
 		
 		$("#about script").remove();
 		$("#about").addClass("velocv-about");
@@ -31,8 +22,8 @@ require(["//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js","//
 		$("section").each(function () {
 			var section_id = $(this).attr("id");
 			if (section_id == "about") return;
-			if (section_id == "resume") return;
-			if (section_id == "recommendationsReceived") return;
+            if (section_id == "resume") return;
+			if (section_id == "references") return;
 			$("#resume").append('<div class="row velocv-' + section_id + '"><div class="three columns header-col"><h1><span>' + $(this).children("h3").text() + '</span></h1></div><div class="nine columns main-col">' + $(this).html() +'</div></div>');
 			$("body>section#" + section_id).remove();
 		});
@@ -49,8 +40,8 @@ require(["//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js","//
 		$(".velocv-languages").prepend("<p></p>");
 		$(".velocv-languages ul").addClass("skills").wrap('<div class="bars"></div>');
 		$(".velocv-languages li").each(function () {
-			if ($(this).children(".proficiency").length) {
-				$(this).children(".proficiency").replaceWith('<span class="bar-expand">' + $(this).children(".proficiency").text() + '</span>');
+			if ($(this).children(".fluency").length) {
+				$(this).children(".fluency").replaceWith('<span class="bar-expand ' + $(this).children(".fluency").attr("class") + '">' + $(this).children(".fluency").text() + '</span>');
 				$(this).children(".bar-expand").after('<em>' + $(this).children("h3").text() + '</em>');
 			} else {
 				$(this).css("background", "none");
@@ -58,23 +49,23 @@ require(["//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js","//
 			}
 		});
 		$(".velocv-languages li h3, .velocv-languages li p.info").remove();
-		$(".velocv-languages li.proficiency-elementary .bar-expand").css("width", "20%");
-		$(".velocv-languages li.proficiency-limited_working .bar-expand").css("width", "40%");
-		$(".velocv-languages li.proficiency-professional_working .bar-expand").css("width", "60%");
-		$(".velocv-languages li.proficiency-full_professional .bar-expand").css("width", "80%");
-		$(".velocv-languages li.proficiency-native_or_bilingual .bar-expand").css("width", "100%");
-		
-		$("section#recommendationsReceived").wrapInner('<div class="text-container"><div class="row"></div></div>');
-		$("section#recommendationsReceived .row").prepend('<div class="two columns header-col"><h1><span>' + $("section#recommendationsReceived h3").text() + '</span></h1></div>');
-		$("section#recommendationsReceived ul").addClass("slides").wrap('<div class="ten columns flex-container"><div class="flexslider"></div></div>');
-		$("section#recommendationsReceived h3").remove();
-		$("section#recommendationsReceived li").each(function () {
-			$(this).prepend("<blockquote><p>" + $(this).children(".recommendationText").html() + "</p><cite>" + $(this).children(".recommender").html() + "</cite></blockquote>");
-			$(this).children(".recommendationText").remove();
-			$(this).children(".recommender").remove();
-		});
-		$("section#recommendationsReceived").attr("id", "testimonials");
-		
+		$(".velocv-languages li .bar-expand.fluency-elementary").css("width", "20%");
+		$(".velocv-languages li .bar-expand.fluency-limited-working").css("width", "40%");
+		$(".velocv-languages li .bar-expand.fluency-professional-working").css("width", "60%");
+		$(".velocv-languages li .bar-expand.fluency-full-professional").css("width", "80%");
+		$(".velocv-languages li .bar-expand.fluency-native-or-bilingual").css("width", "100%");
+
+        $("section#references").wrapInner('<div class="text-container"><div class="row"></div></div>');
+        $("section#references .row").prepend('<div class="two columns header-col"><h1><span>' + $("section#references h3").text() + '</span></h1></div>');
+        //$("section#references ul").addClass("slides").wrap('<div class="ten columns flex-container"><div class="flexslider"></div></div>');
+        $("section#references h3").remove();
+        $("section#references li").each(function () {
+            $(this).prepend("<blockquote><p>" + $(this).children(".reference").html() + "</p><cite>" + $(this).children(".name").html() + "</cite></blockquote>");
+            $(this).children(".reference").remove();
+            $(this).children(".name").remove();
+        });
+        $("section#references").attr("id", "testimonials");
+
 		$(".row:not(.velocv-skills) .main-col li, .velocv-interests .main-col").append("<p></p>");
 		$(".velocv-skills li:not(:last)").append(",&nbsp;");
 		$(".velocv-skills li:last").append(".");
