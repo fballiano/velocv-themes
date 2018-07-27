@@ -1,5 +1,5 @@
-require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
-	require(["//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"], function () {
+require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], function () {
+	require(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"], function () {
 		$("body").show().wrapInner("<div class='container'><div class='row'><div class='col-md-9'></div></div></div>");
 		$("h1").addClass("page-header");
 		$("body>.container>.row").prepend("<div class='col-md-3 hidden-xs hidden-sm'></div>");
