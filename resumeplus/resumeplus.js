@@ -1,5 +1,5 @@
 require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
-    require(["//themifycloud.com/demos/templates/resumeplus/js/bootstrap.min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.easing.js", "//themifycloud.com/demos/templates/resumeplus/js/classie.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.appear.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.flexslider-min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.knob.js"], function () {
+    require(["//themifycloud.com/demos/templates/resumeplus/js/bootstrap.min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.flexslider-min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.knob.js"], function () {
         $("body")
             .attr("id", "page-top")
             .addClass("index")
