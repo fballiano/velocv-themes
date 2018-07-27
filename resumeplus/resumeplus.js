@@ -1,5 +1,5 @@
-require(["//code.jquery.com/jquery-1.11.2.min.js"], function () {
-    require(["//themifycloud.com/demos/templates/resumeplus/js/bootstrap.min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.flexslider-min.js", "//themifycloud.com/demos/templates/resumeplus/js/jquery.knob.js"], function () {
+require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], function () {
+    require(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/flexslider/2.2.2/jquery.flexslider-min.js", "//cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"], function () {
         $("body")
             .attr("id", "page-top")
             .addClass("index")
