@@ -12,22 +12,10 @@ body {
 	height: auto;
 }
 
-.velocv-skills li {
-	float: left;
-}
-
-.bars li em {
-  font: 25px/30px 'opensans-bold', sans-serif;
-  text-transform: none;
-  letter-spacing: normal;
-  font-weight: normal;
-  position: relative;
-  top: -36px;
-}
-
 .bar-expand {
 	padding-left: 10px;
-	overflow: hidden;
+	overflow: visible;
+	white-space: nowrap;
 }
 
 #nav-wrap {
