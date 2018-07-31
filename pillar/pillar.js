@@ -115,5 +115,10 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
 
     $(".resume-body .col-lg-9 section:last").removeClass("mb-5");
     $("#basics, #awards .awarder, #awards .dates, #work>ul, #volunteer>ul, #publications>ul, #references, #education .area, #education .gpa, #work>.summary, #volunteer>.summary, #publications>.summary, #work>.website, #volunteer>.website, #publications>.website").remove();
+
+    $("#designer")
+        .attr("href", "https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap4-resume-cv-template-for-developers-pillar/")
+        .text("3rd Wave Media");
+
     $("body").show();
 });
