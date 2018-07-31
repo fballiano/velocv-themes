@@ -61,8 +61,23 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
 
     $("#work h3, #volunteer h3, #publications h3").after('<div class="resume-section-content"><div class="resume-timeline position-relative"></div></div>');
     $("#work>ul>li, #volunteer>ul>li, #publications>ul>li").each(function () {
-        $(this).parent().parent().find(".resume-timeline").append('<article class="resume-timeline-item position-relative pb-5">' + $(this).html() + '</article>');
+        $(this).parent().parent().find(".resume-timeline").append('<article class="resume-timeline-item position-relative pb-5"><div class="resume-timeline-item-header mb-2"><div class="d-flex flex-column flex-md-row">' + $(this).html() + '</div></div></article>');
     });
+    $("#work .position, #volunteer .position, #publications .name").addClass("resume-position-title font-weight-bold mb-1");
+    $("#work .company, #volunteer .organization, #publications .publisher").addClass("resume-company-name ml-auto").each(function () {
+        $(this).insertAfter($(this).parent().children(".position"));
+    });
+    $("#work .summary, #volunteer .summary, #publications .summary").each(function () {
+        $(this).insertAfter($(this).parent().parent());
+    });
+    $("#work .website, #volunteer .website, #publications .website").each(function () {
+        $(this).insertAfter($(this).parent().parent());
+    });
+    $("#work .dates, #volunteer .dates, #publications .dates").each(function () {
+        $(this).insertAfter($(this).parent());
+    });
+    $("#work .dates, #volunteer .dates, #publications .dates").addClass("resume-position-time")
+    $("#work .summary, #volunteer .summary, #publications .summary").addClass("resume-timeline-item-desc").wrapInner("<p />");
 
     $("#awards ul, #languages ul").addClass("list-unstyled resume-awards-list");
     $("#awards li").addClass("mb-2 pl-4 position-relative").prepend('<i class="resume-award-icon fa fa-trophy position-absolute" data-fa-transform="shrink-2"></i>');
@@ -76,7 +91,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
         $(this).replaceWith('<span class="resume-lang-name font-weight-bold">' + $(this).text() + '</span>');
     });
     $("#languages .fluency").each(function () {
-        $(this).replaceWith('&nbsp;<small class="text-muted font-weight-normal">(' + $(this).text() + ')</small>');
+        $(this).replaceWith('<br /><small class="text-muted font-weight-normal">(' + $(this).text() + ')</small>');
     });
 
     $("#skills>ul").addClass("list-inline");
@@ -85,11 +100,13 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
 
     $("#education>ul").addClass("list-unstyled").wrap('<div class="resume-section-content" />');
     $("#education .resume-section-content>ul>li").addClass("mb-2");
+    $("#education .dates").addClass("resume-degree-time");
     $("#education h4.studyType").each(function () {
-        $(this).replaceWith('<div class="resume-degree font-weight-bold>' + $(this).text() + '</div>');
+        $(this).replaceWith('<div class="resume-degree font-weight-bold">' + $(this).text() + '</div>');
     })
-    $("#education h4.institution").each(function () {
-        $(this).replaceWith('<div class="resume-degree-org>' + $(this).text() + '</div>');
+    $(".col-lg-3 h4.institution").each(function () {
+        $(this).insertAfter($(this).parent().children(".resume-degree"));
+        $(this).replaceWith('<div class="resume-degree-org">' + $(this).text() + '</div>');
     })
 
     $("#profileLanguages").prependTo("body");
@@ -97,6 +114,6 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
     $("#profileLanguages li").addClass("list-inline-item");
 
     $(".resume-body .col-lg-9 section:last").removeClass("mb-5");
-    $("#basics, #awards .awarder, #awards .dates, #work>ul, #volunteer>ul, #publications>ul, #references, #education .area, #education .gpa").remove();
+    $("#basics, #awards .awarder, #awards .dates, #work>ul, #volunteer>ul, #publications>ul, #references, #education .area, #education .gpa, #work>.summary, #volunteer>.summary, #publications>.summary, #work>.website, #volunteer>.website, #publications>.website").remove();
     $("body").show();
 });
