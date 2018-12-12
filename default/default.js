@@ -1,7 +1,7 @@
 require(["//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "//cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"], function () {
     require(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"], function () {
         $("body").show().wrapInner("<div class='container'><div class='row'><div class='col-md-9'></div></div></div>");
-        $("body>.container>.row").prepend("<div class='col-md-3 d-sm-none d-md-block'></div>");
+        $("body>.container>.row").prepend("<div class='col-md-3 d-none d-md-block'></div>");
         $("body>.container>.row>.col-md-3").append($("nav"));
         $("nav#profileSections").prepend($("#picture"));
         $("nav#profileSections ul").addClass("nav nav-pills flex-column");
