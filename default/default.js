@@ -129,6 +129,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "//cdnjs
         $("#basics .rightcol").append($("#profiles"));
         $("#website").replaceWith("<li id='website'>" + $("#website").html() + "</li>");
         $("#email").replaceWith("<li id='email'>" + $("#email").html() + "</li>");
+        $("#basics ul").addClass("mb-0");
 
         $("footer").addClass("mt-4 text-center");
         $("#designer")
