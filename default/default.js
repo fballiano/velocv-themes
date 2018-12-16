@@ -16,8 +16,8 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "//cdnjs
         $("#summary").prepend($("h1").addClass("display-3"));
 
         $("ul.highlights,ul.keywords,ul.courses").addClass("list-inline");
-        $("ul.highlights li,ul.keywords li,ul.courses li").addClass("badge");
-        $("ul.highlights").prepend("<li style='padding-right: 0'><i class='fa fa-tags'></i></li>");
+        $("ul.highlights li,ul.keywords li,ul.courses li").addClass("badge badge-light mr-2");
+        $("ul.highlights").prepend("<li class='badge mr-2'><i class='fa fa-tags'></i></li>");
         $("ul.courses").prepend("<li style='padding-right: 0'><i class='fa fa-graduation-cap'></i></li>");
 
         if ($("#location").length) {
