@@ -26,8 +26,8 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
         if ($("#phone").length) $("ul.contact-list").append('<li><i class="fa fa-phone"></i>' + $("#phone").html() + '</li>');
         if ($("#website").length) $("ul.contact-list").append('<li><i class="fa fa-link"></i>' + $("#website").html() + '</li>');
         $("#profiles a").each(function () {
-            $(this).prepend("<i class='fa fa-" + $(this).prop("class") + "'></i>");
-            $("ul.contact-list").append('<li>' + $(this).html() + '</li>');
+            $(this).prepend("<i class='fa fa-link fa-" + $(this).prop("class") + "'></i>");
+            $("ul.contact-list").append('<li>' + $(this)[0].outerHTML + '</li>');
         });
         $("#work .section-title").prepend('<i class="fa fa-briefcase"></i> ');
         $("#education .section-title").prepend('<i class="fa fa-graduation-cap"></i> ');
