@@ -53,8 +53,8 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "//cdnjs
             $(this).before("<i class='fa fa-" + $(this).prop("class") + "'></i>&nbsp;");
         });
 
-        $("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul, #references>ul, #skills>ul, #awards>ul").addClass("list-group");
-        $("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li, #volunteer>ul>li, #references>ul>li, #skills>ul>li, #awards>ul>li").addClass("list-group-item border-right-0 border-left-0");
+        $("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul, #references>ul, #skills>ul, #awards>ul, #projects>ul").addClass("list-group");
+        $("#work>ul>li, #honorsAwards>ul>li, #education>ul>li, #publications>ul>li, #certifications>ul>li, #interests>ul>li, #volunteer>ul>li, #references>ul>li, #skills>ul>li, #awards>ul>li, #projects>ul>li").addClass("list-group-item border-right-0 border-left-0");
 
         $("#work>ul>li, #volunteer>ul>li, #education>ul>li").prepend("<div class='header clearfix'></div>");
         $("#work>ul>li").each(function () {
@@ -78,6 +78,20 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "//cdnjs
         $("#education>ul>li").each(function () {
             var position = $(this).find(".studyType");
             var company = $(this).find(".institution")
+            if (position.length) $(this).find(".header").append(position);
+            if (company.length) $(this).find(".header").append(company);
+            if (position.length && company.length) {
+                position.append("&nbsp;-&nbsp;");
+            }
+        });
+        $("#projects>ul>li").each(function () {
+            var position = $(this).find(".roles");
+            var tmp = [];
+            position.find("li").each(function () {
+               tmp.push($(this).text());
+            });
+            position.html(tmp.join(', '));
+            var company = $(this).find(".entity")
             if (position.length) $(this).find(".header").append(position);
             if (company.length) $(this).find(".header").append(company);
             if (position.length && company.length) {
