@@ -157,6 +157,7 @@ p {
 .sidebar-wrapper .interests-list li:last-child {
     margin-bottom: 0;
 }
+.sidebar-inner {position:sticky;top:0}
 .main-wrapper {
     background: #fff;
     padding: 60px;
