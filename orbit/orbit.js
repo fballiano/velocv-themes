@@ -1,6 +1,6 @@
 require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], function () {
     require(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"], function () {
-        $("body").prepend("<div class='wrapper'><div class='sidebar-wrapper'><div class='profile-container'></div></div><div class='main-wrapper'></div></div>");
+        $("body").prepend("<div class='wrapper'><div class='sidebar-wrapper'><div class='sidebar-inner'><div class='profile-container'></div></div></div><div class='main-wrapper'></div></div>");
         if ($("#picture").length) {
             $(".profile-container")
                 .css("padding", 0)
@@ -18,7 +18,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
         $("section ul").addClass("list-unstyled");
         $("section li>h4").addClass("job-title");
 
-        $(".sidebar-wrapper").append("<div class='contact-container container-block'><ul class='list-unstyled contact-list'></ul></div>");
+        $(".sidebar-inner").append("<div class='contact-container container-block'><ul class='list-unstyled contact-list'></ul></div>");
         if ($("#city").length) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#city").html() + '</li>');
         if ($("#region").length) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#region").html() + '</li>');
         if ($("#countryCode").length) $("ul.contact-list").append('<li><i class="fa fa-globe"></i>' + $("#countryCode").html() + '</li>');
@@ -26,8 +26,8 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
         if ($("#phone").length) $("ul.contact-list").append('<li><i class="fa fa-phone"></i>' + $("#phone").html() + '</li>');
         if ($("#website").length) $("ul.contact-list").append('<li><i class="fa fa-link"></i>' + $("#website").html() + '</li>');
         $("#profiles a").each(function () {
-            $(this).prepend("<i class='fa fa-" + $(this).prop("class") + "'></i>");
-            $("ul.contact-list").append('<li>' + $(this).html() + '</li>');
+            $(this).prepend("<i class='fa fa-link fa-" + $(this).prop("class") + "'></i>");
+            $("ul.contact-list").append('<li>' + $(this)[0].outerHTML + '</li>');
         });
         $("#work .section-title").prepend('<i class="fa fa-briefcase"></i> ');
         $("#education .section-title").prepend('<i class="fa fa-graduation-cap"></i> ');
@@ -38,7 +38,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
         $("#skills .section-title").prepend('<i class="fa fa-rocket"></i> ');
 
         if ($("#languages").length) {
-            $(".sidebar-wrapper").append('<div class="languages-container container-block"><h2 class="container-block-title">' + $("#languages h3").html() + '</h2><ul class="list-unstyled interests-list"></ul></div>');
+            $(".sidebar-inner").append('<div class="languages-container container-block"><h2 class="container-block-title">' + $("#languages h3").html() + '</h2><ul class="list-unstyled interests-list"></ul></div>');
             $("#languages li").each(function () {
                 var language = $(this).find(".language").html();
                 var fluency = $(this).find(".fluency");
@@ -49,7 +49,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
         }
 
         if ($("#interests").length) {
-            $(".sidebar-wrapper").append('<div class="interests-container container-block"><h2 class="container-block-title">' + $("#interests h3").html() + '</h2><ul class="list-unstyled interests-list"></ul></div>');
+            $(".sidebar-inner").append('<div class="interests-container container-block"><h2 class="container-block-title">' + $("#interests h3").html() + '</h2><ul class="list-unstyled interests-list"></ul></div>');
             $("#interests li ul").remove();
             $("#interests li div.name").each(function () {
                 $(".interests-container .interests-list").append("<li>" + $(this).html()  + "</li>");
