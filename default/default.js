@@ -50,7 +50,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "//cdnjs
 
         $("#profiles").addClass("list-unstyled");
         $("#profiles a").each(function () {
-            $(this).before("<i class='fa fa-" + $(this).prop("class") + "'></i>&nbsp;");
+            $(this).before("<i class='fa fa-link fa-" + $(this).prop("class") + "'></i>&nbsp;");
         });
 
         $("#work>ul, #honorsAwards>ul, #education>ul, #publications>ul, #certifications>ul, #interests>ul, #volunteer>ul, #references>ul, #skills>ul, #awards>ul, #projects>ul").addClass("list-group");
