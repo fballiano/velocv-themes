@@ -304,3 +304,4 @@ ul.contact-list li {white-space:nowrap;overflow: hidden}
 #publications .upper-row {margin-bottom:30px}
 #references .name {font-style:italic;font-weight:bold}
 #references .name:before {content:'\2014 \00A0'}
+.list-inline>li:first-child {padding-left: 7px !important;}
