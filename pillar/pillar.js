@@ -52,6 +52,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
     $('#work').addClass("mb-5").appendTo('.resume-body .col-lg-9');
     $('#volunteer').addClass("mb-5").appendTo('.resume-body .col-lg-9');
     $('#publications').addClass("mb-5").appendTo('.resume-body .col-lg-9');
+    $('#projects').addClass("mb-5").appendTo('.resume-body .col-lg-9');
     $('#skills').appendTo('.resume-body .col-lg-3');
     $('#education').appendTo('.resume-body .col-lg-3');
     $('#awards').appendTo('.resume-body .col-lg-3');
@@ -63,11 +64,11 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
     $("#work>ul>li, #volunteer>ul>li, #publications>ul>li, #projects>ul>li").each(function () {
         $(this).parent().parent().find(".resume-timeline").append('<article class="resume-timeline-item position-relative pb-5"><div class="resume-timeline-item-header mb-2"><div class="d-flex flex-column flex-md-row">' + $(this).html() + '</div></div></article>');
     });
-    $("#work .position, #volunteer .position, #publications .name").addClass("resume-position-title font-weight-bold mb-1");
+    $("#work .position, #volunteer .position, #publications .name, #projects .name").addClass("resume-position-title font-weight-bold mb-1");
     $("#work .company, #volunteer .organization, #publications .publisher").addClass("resume-company-name ml-auto").each(function () {
         $(this).insertAfter($(this).parent().children(".position"));
     });
-    $("#work .summary, #volunteer .summary, #publications .summary, #projects .summary").each(function () {
+    $("#work .summary, #volunteer .summary, #publications .summary, #projects .description").each(function () {
         $(this).insertAfter($(this).parent().parent());
     });
     $("#work .website, #volunteer .website, #publications .website, #projects .website").each(function () {
@@ -77,7 +78,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
         $(this).insertAfter($(this).parent());
     });
     $("#work .dates, #volunteer .dates, #publications .dates, #projects .dates").addClass("resume-position-time");
-    $("#work .summary, #volunteer .summary, #publications .summary, #projects .summary").addClass("resume-timeline-item-desc").wrapInner("<p />");
+    $("#work .summary, #volunteer .summary, #publications .summary, #projects .description").addClass("resume-timeline-item-desc").wrapInner("<p />");
 
     $("#awards ul, #languages ul").addClass("list-unstyled resume-awards-list");
     $("#awards li").addClass("mb-2 pl-4 position-relative").prepend('<i class="resume-award-icon fa fa-trophy position-absolute" data-fa-transform="shrink-2"></i>');
