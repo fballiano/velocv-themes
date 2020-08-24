@@ -115,7 +115,7 @@ require(["//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"], functi
     $("#profileLanguages li").addClass("list-inline-item");
 
     $(".resume-body .col-lg-9 section:last").removeClass("mb-5");
-    $("#basics, #awards .awarder, #awards .dates, #work>ul, #volunteer>ul, #publications>ul, #projects>ul, #references, #education .area, #education .gpa, #work>.summary, #volunteer>.summary, #publications>.summary, #publications>.description, #work>.website, #volunteer>.website, #publications>.website").remove();
+    $("#basics, #awards .awarder, #awards .dates, #work>ul, #volunteer>ul, #publications>ul, #projects>ul, #references, #education .area, #education .gpa, #work>.summary, #volunteer>.summary, #publications>.summary, #projects>.description, #work>.website, #volunteer>.website, #publications>.website").remove();
 
     $("#designer")
         .attr("href", "https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap4-resume-cv-template-for-developers-pillar/")
